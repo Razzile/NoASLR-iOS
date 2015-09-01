@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bc3-tk-kfq" customClass="FUIButton">
+                                <rect key="frame" x="274" y="955" width="220" height="49"/>
+                                <state key="normal" title="Remove ASLR For All">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="removeASLRForAll:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xV4-zX-Fu4"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gid-vZ-RXC">
+                                <rect key="frame" x="0.0" y="929" width="768" height="1"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="90" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="uTQ-1E-Px9">
+                                <rect key="frame" x="0.0" y="64" width="768" height="866"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ID!" rowHeight="90" id="hF3-w7-RkO" customClass="ASLRTableViewCell">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hF3-w7-RkO" id="7Le-it-aOI">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IcH-rI-F9Z">
+                                                    <rect key="frame" x="27" y="5" width="59" height="59"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXt-Zb-nVq">
+                                                    <rect key="frame" x="566" y="24" width="175" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="centerY" secondItem="LXt-Zb-nVq" secondAttribute="centerY" constant="0.5" id="T3j-pH-ZbD"/>
+                                                <constraint firstItem="IcH-rI-F9Z" firstAttribute="leading" secondItem="7Le-it-aOI" secondAttribute="leadingMargin" constant="19" id="Upr-Ma-TfA"/>
+                                                <constraint firstAttribute="centerY" secondItem="IcH-rI-F9Z" secondAttribute="centerY" id="dTr-eY-kC9"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="LXt-Zb-nVq" secondAttribute="trailing" constant="19" id="frk-99-wHK"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="appName" destination="LXt-Zb-nVq" id="ZMv-lX-yjh"/>
+                                            <outlet property="iconView" destination="IcH-rI-F9Z" id="g9H-7p-X5E"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="EeY-TF-VFb"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="0oe-Xw-j9V"/>
+                                </connections>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="38m-yg-SBg">
+                                <rect key="frame" x="0.0" y="20" width="768" height="44"/>
+                                <color key="barTintColor" red="0.17254901959999999" green="0.24313725489999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="NoASLR" id="ykH-gL-HzO">
+                                        <barButtonItem key="rightBarButtonItem" title="About" id="78e-Vk-n1u">
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="showAbout:" destination="BYZ-38-t0r" id="q66-dI-7SY"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Gid-vZ-RXC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-40" id="YBx-Cg-TIf"/>
+                            <constraint firstAttribute="centerX" secondItem="bc3-tk-kfq" secondAttribute="centerX" id="a4t-v0-o6n"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Gid-vZ-RXC" secondAttribute="trailing" constant="-40" id="ikf-4w-Jg7"/>
+                            <constraint firstItem="bc3-tk-kfq" firstAttribute="top" secondItem="uTQ-1E-Px9" secondAttribute="bottom" constant="26" id="lYC-b1-Xz3"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bar" destination="38m-yg-SBg" id="tP2-RX-f7h"/>
+                        <outlet property="button" destination="bc3-tk-kfq" id="ipy-7q-zs4"/>
+                        <outlet property="tableView" destination="uTQ-1E-Px9" id="Dmw-NN-Je3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140" y="135"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>

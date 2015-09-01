@@ -1,0 +1,17 @@
+Package: com.razzile.NoASLR--CLI-
+Name: NoASLR (CLI)
+Version: 0.1-1
+Description: 
+Section: System
+Depends: firmware (>= 5.0)
+Conflicts: 
+Replaces: 
+Priority: optional
+Architecture: iphoneos-arm
+Author: callum taylor
+dev: 
+Homepage: 
+Depiction: 
+Maintainer: 
+Icon: 
+
